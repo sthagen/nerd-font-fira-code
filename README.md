@@ -7,9 +7,12 @@ Single family of fonts for trial (WIP).
 On ubuntu:
 
 ```bash
-$ cd
-$ curl -LO https://github.com/sthagen/nerd-font-fira-code/raw/default/dist/FiraCode.zip && \
-  unzip FiraCode.zip -d "$HOME"/.fonts && \
+$ apt list fontconfig unzip 2>/dev/null | grep -c -e "^fontconfig" -e "^unzip"
+2
+$ cd && \
+  curl -LOs https://github.com/sthagen/nerd-font-fira-code/raw/default/dist/FiraCode.zip && \
+  mkdir -p .fonts && \
+  unzip -q FiraCode.zip -d "$HOME"/.fonts && \
   fc-cache -fv
 ```
 
